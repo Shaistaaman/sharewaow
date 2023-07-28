@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3sharewaowstorage50c661a5",
+  "bucketName": "sharewaow-storage-50c661a5",
+  "policyUUID": "de339f0f",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "READ",
+    "CREATE_AND_UPDATE",
+    "DELETE"
+  ]
+}
