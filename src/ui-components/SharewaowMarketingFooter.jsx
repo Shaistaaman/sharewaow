@@ -6,10 +6,23 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Flex, Text, View } from "@aws-amplify/ui-react";
+import {
+  getOverrideProps,
+  useNavigateAction,
+} from "@aws-amplify/ui-react/internal";
+import { Flex, Image, Text, View } from "@aws-amplify/ui-react";
 export default function SharewaowMarketingFooter(props) {
   const { overrides, ...rest } = props;
+  const aboutOnClick = useNavigateAction({ type: "url", url: "/about" });
+  const ridesOnClick = useNavigateAction({ type: "url", url: "/rides" });
+  const foodsOnClick = useNavigateAction({ type: "url", url: "/foods" });
+  const clothesOnClick = useNavigateAction({ type: "url", url: "/clothes" });
+  const booksOnClick = useNavigateAction({ type: "url", url: "/books" });
+  const privacyPolicyOnClick = useNavigateAction({
+    type: "url",
+    url: "/privacy",
+  });
+  const termsofUseOnClick = useNavigateAction({ type: "url", url: "/terms" });
   return (
     <View
       width="1440px"
@@ -97,6 +110,7 @@ export default function SharewaowMarketingFooter(props) {
             display="block"
             direction="column"
             justifyContent="unset"
+            textDecoration="underline"
             letterSpacing="0.01px"
             width="272px"
             height="unset"
@@ -107,6 +121,9 @@ export default function SharewaowMarketingFooter(props) {
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
             children="About"
+            onClick={() => {
+              aboutOnClick();
+            }}
             {...getOverrideProps(overrides, "About")}
           ></Text>
           <Text
@@ -119,6 +136,7 @@ export default function SharewaowMarketingFooter(props) {
             display="block"
             direction="column"
             justifyContent="unset"
+            textDecoration="underline"
             letterSpacing="0.01px"
             width="272px"
             height="unset"
@@ -129,6 +147,9 @@ export default function SharewaowMarketingFooter(props) {
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
             children="Rides"
+            onClick={() => {
+              ridesOnClick();
+            }}
             {...getOverrideProps(overrides, "Rides")}
           ></Text>
           <Text
@@ -141,6 +162,7 @@ export default function SharewaowMarketingFooter(props) {
             display="block"
             direction="column"
             justifyContent="unset"
+            textDecoration="underline"
             letterSpacing="0.01px"
             width="272px"
             height="unset"
@@ -151,6 +173,9 @@ export default function SharewaowMarketingFooter(props) {
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
             children="Foods"
+            onClick={() => {
+              foodsOnClick();
+            }}
             {...getOverrideProps(overrides, "Foods")}
           ></Text>
           <Text
@@ -163,6 +188,7 @@ export default function SharewaowMarketingFooter(props) {
             display="block"
             direction="column"
             justifyContent="unset"
+            textDecoration="underline"
             letterSpacing="0.01px"
             width="272px"
             height="unset"
@@ -173,6 +199,9 @@ export default function SharewaowMarketingFooter(props) {
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
             children="Clothes"
+            onClick={() => {
+              clothesOnClick();
+            }}
             {...getOverrideProps(overrides, "Clothes")}
           ></Text>
           <Text
@@ -185,6 +214,7 @@ export default function SharewaowMarketingFooter(props) {
             display="block"
             direction="column"
             justifyContent="unset"
+            textDecoration="underline"
             letterSpacing="0.01px"
             width="272px"
             height="unset"
@@ -195,6 +225,9 @@ export default function SharewaowMarketingFooter(props) {
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
             children="Books"
+            onClick={() => {
+              booksOnClick();
+            }}
             {...getOverrideProps(overrides, "Books")}
           ></Text>
         </Flex>
@@ -242,6 +275,7 @@ export default function SharewaowMarketingFooter(props) {
             display="block"
             direction="column"
             justifyContent="unset"
+            textDecoration="underline"
             letterSpacing="0.01px"
             width="272px"
             height="unset"
@@ -252,6 +286,9 @@ export default function SharewaowMarketingFooter(props) {
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
             children="Privacy Policy"
+            onClick={() => {
+              privacyPolicyOnClick();
+            }}
             {...getOverrideProps(overrides, "Privacy Policy")}
           ></Text>
           <Text
@@ -264,6 +301,7 @@ export default function SharewaowMarketingFooter(props) {
             display="block"
             direction="column"
             justifyContent="unset"
+            textDecoration="underline"
             letterSpacing="0.01px"
             width="272px"
             height="unset"
@@ -274,6 +312,9 @@ export default function SharewaowMarketingFooter(props) {
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
             children="Terms of Use "
+            onClick={() => {
+              termsofUseOnClick();
+            }}
             {...getOverrideProps(overrides, "Terms of Use")}
           ></Text>
         </Flex>
@@ -317,9 +358,8 @@ export default function SharewaowMarketingFooter(props) {
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Frame 313")}
       >
-        <Flex
-          padding="0px 0px 0px 0px"
-          width="151px"
+        <Image
+          width="149px"
           height="53px"
           display="block"
           gap="unset"
@@ -327,57 +367,11 @@ export default function SharewaowMarketingFooter(props) {
           justifyContent="unset"
           shrink="0"
           position="relative"
-          {...getOverrideProps(overrides, "logo")}
-        >
-          <Text
-            fontFamily="Pacifico"
-            fontSize="30px"
-            fontWeight="400"
-            color="rgba(255,143,2,1)"
-            lineHeight="52.68000030517578px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            position="absolute"
-            top="-0.38%"
-            bottom="-0.38%"
-            left="-0.13%"
-            right="49.54%"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Share"
-            {...getOverrideProps(overrides, "Share")}
-          ></Text>
-          <Text
-            fontFamily="Pacifico"
-            fontSize="18px"
-            fontWeight="400"
-            color="rgba(4,135,255,1)"
-            lineHeight="31.608001708984375px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            position="absolute"
-            top="27.92%"
-            bottom="10.94%"
-            left="51.52%"
-            right="-0.13%"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="WAOW"
-            {...getOverrideProps(overrides, "WAOW")}
-          ></Text>
-        </Flex>
+          padding="0px 0px 0px 0px"
+          objectFit="cover"
+          src="https://sharewaow-storage-50c661a5182537-staging.s3.amazonaws.com/public/sharewaowlogo.png"
+          {...getOverrideProps(overrides, "sharewaowlogo 3")}
+        ></Image>
         <Text
           fontFamily="Inter"
           fontSize="30px"

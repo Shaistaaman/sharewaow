@@ -10,10 +10,8 @@ import { ButtonProps, FlexProps, IconProps, ImageProps, TextProps, ViewProps } f
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type LogedinNavBarOverridesProps = {
     LogedinNavBar?: PrimitiveOverrideProps<FlexProps>;
-    Logo4112300?: PrimitiveOverrideProps<FlexProps>;
-    Logo4112301?: PrimitiveOverrideProps<FlexProps>;
-    Share?: PrimitiveOverrideProps<TextProps>;
-    WAOW?: PrimitiveOverrideProps<TextProps>;
+    Logo?: PrimitiveOverrideProps<FlexProps>;
+    "sharewaowlogo 2"?: PrimitiveOverrideProps<ImageProps>;
     Location?: PrimitiveOverrideProps<FlexProps>;
     "iconamoon:location-thin"?: PrimitiveOverrideProps<ViewProps>;
     Vector4112306?: PrimitiveOverrideProps<IconProps>;

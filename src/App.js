@@ -1,23 +1,32 @@
-import {Books, Clothes, Features, Foods, MainNavBar, RideCollection, Rides, SharewaowHeroLayout, SharewaowMarketingFooter} from "./ui-components"
+import React, {useEffect, useState} from "react";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+// import {Authenticator} from "@aws-amplify/ui-react";
+import LandingPage from "./LandingPage";
+import Dashboard from "./Dashboard";
 
-function App () {
+const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+
+  useEffect(() => {
+    // Your authentication check logic
+    setIsAuthenticated(true); // Temporarily set to true for demonstration
+  }, []);
+
   return (
-    <>
-      <MainNavBar width="100%"/>
-      <div className="container">
-      <SharewaowHeroLayout  />
-      <div className="row">
-      <div className="col"><Rides /></div>
-      <div className="col"><Foods /></div>      
-      <div className="col"><Clothes /></div> 
-      <div className="col"><Books /></div> 
-      </div>
-      <RideCollection />
-      <Features />
-      <SharewaowMarketingFooter  />
-      </div>
-    </>
+    // <Authenticator>
+    //   {({signOut, user}) => (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          // element={isAuthenticated ? <Dashboard /> : <LandingPage />}
+          element=<LandingPage />
+        />
+      </Routes>
+    </Router>
+    //   )}
+    // </Authenticator>
   );
-}
+};
 
-export default (App);
+export default App;

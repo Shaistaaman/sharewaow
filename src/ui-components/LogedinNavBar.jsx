@@ -6,10 +6,14 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useAuthSignOutAction,
+} from "@aws-amplify/ui-react/internal";
 import { Button, Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
 export default function LogedinNavBar(props) {
   const { overrides, ...rest } = props;
+  const buttonOnClick = useAuthSignOutAction({ global: true });
   return (
     <Flex
       gap="700px"
@@ -35,11 +39,10 @@ export default function LogedinNavBar(props) {
         alignSelf="stretch"
         position="relative"
         padding="0px 0px 0px 0px"
-        {...getOverrideProps(overrides, "Logo4112300")}
+        {...getOverrideProps(overrides, "Logo")}
       >
-        <Flex
-          padding="0px 0px 0px 0px"
-          width="150px"
+        <Image
+          width="149px"
           height="53px"
           display="block"
           gap="unset"
@@ -47,53 +50,11 @@ export default function LogedinNavBar(props) {
           justifyContent="unset"
           shrink="0"
           position="relative"
-          {...getOverrideProps(overrides, "Logo4112301")}
-        >
-          <Text
-            fontFamily="Pacifico"
-            fontSize="30px"
-            fontWeight="400"
-            color="rgba(255,143,2,1)"
-            lineHeight="52.68000030517578px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            position="absolute"
-            top="-0.2px"
-            left="-0.2px"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Share"
-            {...getOverrideProps(overrides, "Share")}
-          ></Text>
-          <Text
-            fontFamily="Pacifico"
-            fontSize="18px"
-            fontWeight="400"
-            color="rgba(4,135,255,1)"
-            lineHeight="31.608001708984375px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            position="absolute"
-            top="14.8px"
-            left="76.8px"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="WAOW"
-            {...getOverrideProps(overrides, "WAOW")}
-          ></Text>
-        </Flex>
+          padding="0px 0px 0px 0px"
+          objectFit="cover"
+          src="https://sharewaow-storage-50c661a5182537-staging.s3.amazonaws.com/public/sharewaowlogo.png"
+          {...getOverrideProps(overrides, "sharewaowlogo 2")}
+        ></Image>
         <Flex
           gap="10px"
           direction="row"
@@ -245,6 +206,9 @@ export default function LogedinNavBar(props) {
           isDisabled={false}
           variation="primary"
           children="Sign Out"
+          onClick={() => {
+            buttonOnClick();
+          }}
           {...getOverrideProps(overrides, "Button")}
         ></Button>
       </Flex>

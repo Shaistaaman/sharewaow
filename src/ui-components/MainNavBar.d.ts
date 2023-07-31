@@ -6,14 +6,12 @@
 
 import * as React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { ButtonProps, FlexProps, IconProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { ButtonProps, FlexProps, IconProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type MainNavBarOverridesProps = {
     MainNavBar?: PrimitiveOverrideProps<FlexProps>;
-    Logo40862723?: PrimitiveOverrideProps<FlexProps>;
-    Logo40862724?: PrimitiveOverrideProps<FlexProps>;
-    Share?: PrimitiveOverrideProps<TextProps>;
-    WAOW?: PrimitiveOverrideProps<TextProps>;
+    Logo?: PrimitiveOverrideProps<FlexProps>;
+    "sharewaowlogo 1"?: PrimitiveOverrideProps<ImageProps>;
     Location?: PrimitiveOverrideProps<FlexProps>;
     "iconamoon:location-thin"?: PrimitiveOverrideProps<ViewProps>;
     Vector?: PrimitiveOverrideProps<IconProps>;
@@ -23,6 +21,8 @@ export declare type MainNavBarOverridesProps = {
     Button40862734?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type MainNavBarProps = React.PropsWithChildren<Partial<FlexProps> & {
+    Location?: String;
+} & {
     overrides?: MainNavBarOverridesProps | undefined | null;
 }>;
 export default function MainNavBar(props: MainNavBarProps): React.ReactElement;

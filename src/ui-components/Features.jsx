@@ -77,6 +77,7 @@ export default function Features(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               objectFit="cover"
+              src="https://sharewaow-storage-50c661a5182537-staging.s3.amazonaws.com/public/sharing.jpg"
               {...getOverrideProps(overrides, "Women day 2 copy 140632882")}
             ></Image>
             <Text
@@ -155,6 +156,7 @@ export default function Features(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               objectFit="cover"
+              src="https://sharewaow-storage-50c661a5182537-staging.s3.amazonaws.com/public/handshake.jpg"
               {...getOverrideProps(overrides, "Women day 2 copy 140632883")}
             ></Image>
             <Text
@@ -247,6 +249,7 @@ export default function Features(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               objectFit="cover"
+              src="https://sharewaow-storage-50c661a5182537-staging.s3.amazonaws.com/public/completesharing.jpg"
               {...getOverrideProps(overrides, "Women day 2 copy 140632884")}
             ></Image>
             <Text
@@ -325,6 +328,7 @@ export default function Features(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               objectFit="cover"
+              src="https://sharewaow-storage-50c661a5182537-staging.s3.amazonaws.com/public/rating.jpg"
               {...getOverrideProps(overrides, "Women day 2 copy 140632885")}
             ></Image>
             <Text

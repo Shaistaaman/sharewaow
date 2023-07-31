@@ -6,10 +6,25 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Button, Flex, Icon, Text, View } from "@aws-amplify/ui-react";
+import {
+  getOverrideProps,
+  useNavigateAction,
+} from "@aws-amplify/ui-react/internal";
+import { Button, Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
 export default function MainNavBar(props) {
-  const { overrides, ...rest } = props;
+  const {
+    Location = "import { Geo } from 'aws-amplify';  const location = await Geo.getCurrentLocation();  return location.name;",
+    overrides,
+    ...rest
+  } = props;
+  const buttonFourZeroEightSixTwoSevenThreeThreeOnClick = useNavigateAction({
+    type: "url",
+    url: "/Dashboard",
+  });
+  const buttonFourZeroEightSixTwoSevenThreeFourOnClick = useNavigateAction({
+    type: "url",
+    url: "/Dashboard",
+  });
   return (
     <Flex
       gap="700px"
@@ -35,11 +50,10 @@ export default function MainNavBar(props) {
         alignSelf="stretch"
         position="relative"
         padding="0px 0px 0px 0px"
-        {...getOverrideProps(overrides, "Logo40862723")}
+        {...getOverrideProps(overrides, "Logo")}
       >
-        <Flex
-          padding="0px 0px 0px 0px"
-          width="150px"
+        <Image
+          width="149px"
           height="53px"
           display="block"
           gap="unset"
@@ -47,53 +61,11 @@ export default function MainNavBar(props) {
           justifyContent="unset"
           shrink="0"
           position="relative"
-          {...getOverrideProps(overrides, "Logo40862724")}
-        >
-          <Text
-            fontFamily="Pacifico"
-            fontSize="30px"
-            fontWeight="400"
-            color="rgba(255,143,2,1)"
-            lineHeight="52.68000030517578px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            position="absolute"
-            top="-0.2px"
-            left="-0.2px"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Share"
-            {...getOverrideProps(overrides, "Share")}
-          ></Text>
-          <Text
-            fontFamily="Pacifico"
-            fontSize="18px"
-            fontWeight="400"
-            color="rgba(4,135,255,1)"
-            lineHeight="31.608001708984375px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            position="absolute"
-            top="14.8px"
-            left="76.8px"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="WAOW"
-            {...getOverrideProps(overrides, "WAOW")}
-          ></Text>
-        </Flex>
+          padding="0px 0px 0px 0px"
+          objectFit="cover"
+          src="https://sharewaow-storage-50c661a5182537-staging.s3.amazonaws.com/public/sharewaowlogo.png"
+          {...getOverrideProps(overrides, "sharewaowlogo 1")}
+        ></Image>
         <Flex
           gap="10px"
           direction="row"
@@ -195,6 +167,9 @@ export default function MainNavBar(props) {
           isDisabled={false}
           variation="primary"
           children="SHARE ITEM"
+          onClick={() => {
+            buttonFourZeroEightSixTwoSevenThreeThreeOnClick();
+          }}
           {...getOverrideProps(overrides, "Button40862733")}
         ></Button>
         <Button
@@ -207,6 +182,9 @@ export default function MainNavBar(props) {
           isDisabled={false}
           variation="primary"
           children="REQUEST ITEM"
+          onClick={() => {
+            buttonFourZeroEightSixTwoSevenThreeFourOnClick();
+          }}
           {...getOverrideProps(overrides, "Button40862734")}
         ></Button>
       </Flex>

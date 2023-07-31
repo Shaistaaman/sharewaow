@@ -6,7 +6,7 @@
 
 import * as React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { FlexProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { FlexProps, ImageProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
 export declare type SharewaowMarketingFooterOverridesProps = {
     SharewaowMarketingFooter?: PrimitiveOverrideProps<ViewProps>;
@@ -25,9 +25,7 @@ export declare type SharewaowMarketingFooterOverridesProps = {
     "Terms of Use"?: PrimitiveOverrideProps<TextProps>;
     "\u00A9 Copyright Sharewaow. All Rights Reserved"?: PrimitiveOverrideProps<TextProps>;
     "Frame 313"?: PrimitiveOverrideProps<FlexProps>;
-    logo?: PrimitiveOverrideProps<FlexProps>;
-    Share?: PrimitiveOverrideProps<TextProps>;
-    WAOW?: PrimitiveOverrideProps<TextProps>;
+    "sharewaowlogo 3"?: PrimitiveOverrideProps<ImageProps>;
     "Community Sharing Made Easy"?: PrimitiveOverrideProps<TextProps>;
     "Sharewaow is a community-driven platform that connects people who want to share various items, from food and books to clothes and rides, making it easy and accessible to share with others."?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;

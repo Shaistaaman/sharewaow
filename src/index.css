@@ -39,8 +39,7 @@ code {
     justify-content: center;
   }
   .col{
-     
+    
     box-sizing: border-box;
-    flex: 1; /* Flex-grow: 1, Flex-shrink: 0, Flex-basis: 20% */
-    padding: 10px; /* Padding around each column */
+    padding: 10px; 
   }
