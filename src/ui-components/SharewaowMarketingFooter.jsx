@@ -23,6 +23,10 @@ export default function SharewaowMarketingFooter(props) {
     url: "/privacy",
   });
   const termsofUseOnClick = useNavigateAction({ type: "url", url: "/terms" });
+  const sharewaowlogoThreeOnClick = useNavigateAction({
+    type: "url",
+    url: "https://www.sharewaow.com/",
+  });
   return (
     <View
       width="1440px"
@@ -370,6 +374,9 @@ export default function SharewaowMarketingFooter(props) {
           padding="0px 0px 0px 0px"
           objectFit="cover"
           src="https://sharewaow-storage-50c661a5182537-staging.s3.amazonaws.com/public/sharewaowlogo.png"
+          onClick={() => {
+            sharewaowlogoThreeOnClick();
+          }}
           {...getOverrideProps(overrides, "sharewaowlogo 3")}
         ></Image>
         <Text

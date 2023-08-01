@@ -16,8 +16,16 @@ code {
 }
 
 .container {
-  width: 100%; 
+  width: 100%;  
   
+}
+.collection{
+  margin: 0 auto;
+ 
+}
+.ridecollection{
+  margin: 0 auto;
+  max-width: 1000px;
 }
   @media (min-width: 576px) {
     .container {
@@ -42,4 +50,16 @@ code {
     
     box-sizing: border-box;
     padding: 10px; 
+  }
+  .modal {
+    position: absolute;
+    opacity: 1  !important;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    left: 0;
+    right: 0;
+    top: 100px;
+    border: .5px solid grey;
   }

@@ -1,30 +1,26 @@
-import React, {useEffect, useState} from "react";
 import {
   Category,
   Features,
   MainNavBar,
-  RideCollection,
+  FAQCollection,
   SharewaowHeroLayout,
   SharewaowMarketingFooter,
 } from "./ui-components";
-
-function LandingPage() {
+function Privacy() {
   return (
     <>
-      {/* <Authenticator> */}
       <MainNavBar width="100%" />
       <div className="container">
         <SharewaowHeroLayout />
         <Category />
-        <div className="ridecollection">
-          <RideCollection />
+        <div className="collection">
+          <FAQCollection />
         </div>
         <Features />
         <SharewaowMarketingFooter />
       </div>
-      {/* </Authenticator> */}
     </>
   );
 }
 
-export default LandingPage;
+export default Privacy;

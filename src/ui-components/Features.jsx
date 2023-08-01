@@ -77,7 +77,7 @@ export default function Features(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               objectFit="cover"
-              src="https://sharewaow-storage-50c661a5182537-staging.s3.amazonaws.com/public/sharing.jpg"
+              src="https://sharewaow-storage-50c661a5182537-staging.s3.amazonaws.com/public/rides.jpg"
               {...getOverrideProps(overrides, "Women day 2 copy 140632882")}
             ></Image>
             <Text

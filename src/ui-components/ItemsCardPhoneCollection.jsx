@@ -12,9 +12,9 @@ import {
   getOverrideProps,
   useDataStoreBinding,
 } from "@aws-amplify/ui-react/internal";
-import ItemsSummaryCard from "./ItemsSummaryCard";
+import ItemsCardPhone from "./ItemsCardPhone";
 import { Collection } from "@aws-amplify/ui-react";
-export default function RideCollection(props) {
+export default function ItemsCardPhoneCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
   const itemsPagination = {
     sort: (s) => s.createdAt(SortDirection.DESCENDING),
@@ -35,25 +35,27 @@ export default function RideCollection(props) {
   return (
     <Collection
       type="grid"
-      isSearchable="true"
+      isSearchable={true}
       isPaginated={true}
-      searchPlaceholder="Search Here..."
+      searchPlaceholder="Search..."
       itemsPerPage={25}
       templateColumns="1fr 1fr 1fr"
       autoFlow="row"
       alignItems="stretch"
       justifyContent="stretch"
       items={items || []}
-      {...getOverrideProps(overrides, "RideCollection")}
+      {...getOverrideProps(overrides, "ItemsCardPhoneCollection")}
       {...rest}
     >
       {(item, index) => (
-        <ItemsSummaryCard
-          rides={item}
+        <ItemsCardPhone
+          phoneride={item}
+          height="auto"
+          width="auto"
           margin="10px 10px 10px 10px"
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
-        ></ItemsSummaryCard>
+        ></ItemsCardPhone>
       )}
     </Collection>
   );

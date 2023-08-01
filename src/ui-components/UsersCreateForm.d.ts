@@ -48,6 +48,7 @@ export declare type UsersCreateFormProps = React.PropsWithChildren<{
     onSubmit?: (fields: UsersCreateFormInputValues) => UsersCreateFormInputValues;
     onSuccess?: (fields: UsersCreateFormInputValues) => void;
     onError?: (fields: UsersCreateFormInputValues, errorMessage: string) => void;
+    onCancel?: () => void;
     onChange?: (fields: UsersCreateFormInputValues) => UsersCreateFormInputValues;
     onValidate?: UsersCreateFormValidationValues;
 } & React.CSSProperties>;

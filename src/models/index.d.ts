@@ -76,11 +76,9 @@ type EagerRides = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly image: string;
   readonly price_per_seat: number;
   readonly title: string;
   readonly no_of_seats: number;
-  readonly UsersRides?: Users | null;
   readonly male_seats: number;
   readonly female_seats: number;
   readonly date_to_leave: string;
@@ -88,9 +86,9 @@ type EagerRides = {
   readonly ride_destination: Cities | keyof typeof Cities;
   readonly ride_from: Cities | keyof typeof Cities;
   readonly expire_ride?: string | null;
+  readonly phone?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  readonly ridesUsersRidesId?: string | null;
 }
 
 type LazyRides = {
@@ -99,11 +97,9 @@ type LazyRides = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly image: string;
   readonly price_per_seat: number;
   readonly title: string;
   readonly no_of_seats: number;
-  readonly UsersRides: AsyncItem<Users | undefined>;
   readonly male_seats: number;
   readonly female_seats: number;
   readonly date_to_leave: string;
@@ -111,9 +107,9 @@ type LazyRides = {
   readonly ride_destination: Cities | keyof typeof Cities;
   readonly ride_from: Cities | keyof typeof Cities;
   readonly expire_ride?: string | null;
+  readonly phone?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
-  readonly ridesUsersRidesId?: string | null;
 }
 
 export declare type Rides = LazyLoading extends LazyLoadingDisabled ? EagerRides : LazyRides

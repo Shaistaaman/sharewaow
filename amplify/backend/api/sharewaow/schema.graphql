@@ -39,13 +39,11 @@ enum Status {
   BLOCK
 }
 
-type Rides @model @auth(rules: [{allow: public}]) {
+type Rides @model @auth(rules: [{allow: public, operations: [read]}, {allow: owner}]) {
   id: ID!
-  image: AWSURL!
   price_per_seat: Int!
   title: String!
   no_of_seats: Int!
-  UsersRides: Users @hasOne
   male_seats: Int!
   female_seats: Int!
   date_to_leave: AWSDate!
@@ -53,6 +51,7 @@ type Rides @model @auth(rules: [{allow: public}]) {
   ride_destination: Cities!
   ride_from: Cities!
   expire_ride: AWSDateTime
+  phone: AWSPhone
 }
 
 type Foods @model @auth(rules: [{allow: public}]) {

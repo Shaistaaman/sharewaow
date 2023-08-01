@@ -85,13 +85,6 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "image": {
-                    "name": "image",
-                    "isArray": false,
-                    "type": "AWSURL",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "price_per_seat": {
                     "name": "price_per_seat",
                     "isArray": false,
@@ -112,24 +105,6 @@ export const schema = {
                     "type": "Int",
                     "isRequired": true,
                     "attributes": []
-                },
-                "UsersRides": {
-                    "name": "UsersRides",
-                    "isArray": false,
-                    "type": {
-                        "model": "Users"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "HAS_ONE",
-                        "associatedWith": [
-                            "id"
-                        ],
-                        "targetNames": [
-                            "ridesUsersRidesId"
-                        ]
-                    }
                 },
                 "male_seats": {
                     "name": "male_seats",
@@ -184,6 +159,13 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "phone": {
+                    "name": "phone",
+                    "isArray": false,
+                    "type": "AWSPhone",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -199,13 +181,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": [],
                     "isReadOnly": true
-                },
-                "ridesUsersRidesId": {
-                    "name": "ridesUsersRidesId",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": false,
-                    "attributes": []
                 }
             },
             "syncable": true,
@@ -221,6 +196,15 @@ export const schema = {
                         "rules": [
                             {
                                 "allow": "public",
+                                "operations": [
+                                    "read"
+                                ]
+                            },
+                            {
+                                "provider": "userPools",
+                                "ownerField": "owner",
+                                "allow": "owner",
+                                "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
@@ -730,5 +714,5 @@ export const schema = {
     },
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "85876a8760a90c1a7be90bb4127118c5"
+    "version": "7e555b1f5f92cd4cbf5ff39866782cb6"
 };

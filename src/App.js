@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 // import {Authenticator} from "@aws-amplify/ui-react";
 import LandingPage from "./LandingPage";
 import Dashboard from "./Dashboard";
+import Privacy from "./Privacy";
+import Terms from "./Terms";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -19,9 +21,12 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          // element={isAuthenticated ? <Dashboard /> : <LandingPage />}
           element=<LandingPage />
+          // element={isAuthenticated ? <Dashboard /> : <LandingPage />}
         />
+        <Route path="/Dashboard" element=<Dashboard /> />
+        <Route path="/Privacy" element=<Privacy /> />
+        <Route path="/Terms" element=<Terms /> />
       </Routes>
     </Router>
     //   )}

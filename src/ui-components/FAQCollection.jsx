@@ -6,24 +6,19 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { Rides } from "../models";
-import { SortDirection } from "@aws-amplify/datastore";
+import { FAQ } from "../models";
 import {
   getOverrideProps,
   useDataStoreBinding,
 } from "@aws-amplify/ui-react/internal";
-import ItemsSummaryCard from "./ItemsSummaryCard";
+import FAQItemsharewaow from "./FAQItemsharewaow";
 import { Collection } from "@aws-amplify/ui-react";
-export default function RideCollection(props) {
+export default function FAQCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
-  const itemsPagination = {
-    sort: (s) => s.createdAt(SortDirection.DESCENDING),
-  };
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
-    model: Rides,
-    pagination: itemsPagination,
+    model: FAQ,
   }).items;
   React.useEffect(() => {
     if (itemsProp !== undefined) {
@@ -34,26 +29,24 @@ export default function RideCollection(props) {
   }, [itemsProp, itemsDataStore]);
   return (
     <Collection
-      type="grid"
-      isSearchable="true"
+      type="list"
+      isSearchable={true}
       isPaginated={true}
       searchPlaceholder="Search Here..."
-      itemsPerPage={25}
-      templateColumns="1fr 1fr 1fr"
-      autoFlow="row"
-      alignItems="stretch"
-      justifyContent="stretch"
+      itemsPerPage={5}
+      direction="column"
+      justifyContent="left"
       items={items || []}
-      {...getOverrideProps(overrides, "RideCollection")}
+      {...getOverrideProps(overrides, "FAQCollection")}
       {...rest}
     >
       {(item, index) => (
-        <ItemsSummaryCard
-          rides={item}
+        <FAQItemsharewaow
+          Faq={item}
           margin="10px 10px 10px 10px"
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
-        ></ItemsSummaryCard>
+        ></FAQItemsharewaow>
       )}
     </Collection>
   );
